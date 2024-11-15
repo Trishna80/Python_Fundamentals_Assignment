@@ -1,0 +1,30 @@
+#temperature converted: celcius to ferhenite, ferhenite to celcius
+#ask user for temperature value and also the unit
+class temperature:
+  def __init__(self, temp, choice):
+    self.temp = temp
+    self.choice = choice
+
+  def celcius_to_ferhenite(self):
+    return (self.temp * 9/5) + 32
+
+  def ferhenite_to_celcius(self):
+    return (self.temp - 32) * 5/9
+
+def main():
+  choice = int(input("Enter your choice 1 or 2 (1 for C to F, 2 for F to C): "))
+  temp = float(input("Enter temperature value: "))
+
+  temp_converter = temperature(temp, choice)  # Create an instance
+
+  if choice == 1:
+    result = temp_converter.celcius_to_ferhenite()
+    print(f"{temp} Celsius is equal to {result} Fahrenheit")
+  elif choice == 2:
+    result = temp_converter.ferhenite_to_celcius()
+    print(f"{temp} Fahrenheit is equal to {result} Celsius")
+  else:
+    print("Invalid choice. Please enter 1 or 2.")
+
+if __name__ == "__main__":
+  main()
